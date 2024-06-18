@@ -29,4 +29,5 @@
     <string name="history">History</string>
     <string name="date">Date: </string>
     <string name="text_dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis vestibulum consectetur. Nunc euismod, lectus eu vestibulum cursus, eros justo tempus metus, sed suscipit libero nibh vitae erat. Sed urna magna, aliquam id nisi nec, volutpat ullamcorper nisl. Vivamus porta justo nibh, nec vestibulum orci ullamcorper vitae.</string>
+    <string name="nama">Nama</string>
 </resources>
