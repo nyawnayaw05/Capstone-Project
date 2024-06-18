@@ -6,6 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".view.home.HomeActivity">
 
+    <LinearLayout
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat datang di Dentalize,"
+            android:textColor="@color/darker_green"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayo periksa kesehatan gigi anda!"
+            android:textColor="@color/darker_green"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_toEndOf="@+id/tv_welcome"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="50dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="270dp"
+        android:text="@string/history"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/list_history_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="55dp"
+        app:cardCornerRadius="40dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbarSize="0dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.cardview.widget.CardView>
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -52,50 +132,7 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/baseline_person_24"
             tools:ignore="MissingConstraints" />
-
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/card_view"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical"
-        android:padding="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="126dp">
-
-        <TextView
-            android:id="@+id/history"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="270dp"
-            android:text="@string/history"
-            android:textColor="@color/cream"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="-10dp"
-        android:src="@drawable/cardpreview"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="50dp"
-        app:cardCornerRadius="40dp"/>
 
 </RelativeLayout>
