@@ -20,6 +20,8 @@ class LoginActivity : AppCompatActivity() {
     }
     private lateinit var binding: ActivityLoginBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -40,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
         builder.setView(R.layout.activity_login)
         val dialog: AlertDialog = builder.create()
 
-        loginViewModel.loginResponse.observe(this@LoginActivity) { response ->
+        loginViewModel.responseResult.observe(this@LoginActivity) { response ->
             when (response) {
                 is ResultState.Loading -> dialog.show()
                 is ResultState.Error -> {

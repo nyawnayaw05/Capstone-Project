@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.map
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "session")
 class UserPreference private constructor(private val dataStore: DataStore<Preferences>) {
     private val token = stringPreferencesKey("token")
-
     suspend fun saveToken(token: String) {
         dataStore.edit { preferences ->
             preferences[this.token] = token

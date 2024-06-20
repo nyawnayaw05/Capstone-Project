@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028459647159",
+    "project_id": "dentalize-a037a",
+    "storage_bucket": "dentalize-a037a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028459647159:android:db16f39302af58104cbd32",
+        "android_client_info": {
+          "package_name": "com.example.dentalize"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhKH587hAG8sIWrYuGK96vkyenVlbwiek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

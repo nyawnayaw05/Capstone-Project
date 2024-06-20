@@ -4,14 +4,15 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.dentalize.data.di.Injection
-import com.example.dentalize.data.pref.UserRepository
+import com.example.dentalize.data.repository.PredictRepository
+import com.example.dentalize.view.add.AddViewModel
 import com.example.dentalize.view.home.HomeViewModel
 import com.example.dentalize.view.login.LoginViewModel
 
 import com.example.dentalize.view.main.MainViewModel
 import com.example.dentalize.view.register.RegisterViewModel
 
-class ViewModelFactory(private val repository: UserRepository): ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory(private val repository: PredictRepository): ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
@@ -27,6 +28,10 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(repository) as T
             }
+            modelClass.isAssignableFrom(AddViewModel::class.java) -> {
+                AddViewModel(repository) as T
+            }
+
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
@@ -34,7 +39,6 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
     companion object {
         @Volatile
         private var INSTANCE: ViewModelFactory? = null
-
         @JvmStatic
         fun getInstance(context: Context): ViewModelFactory {
             if (INSTANCE == null) {

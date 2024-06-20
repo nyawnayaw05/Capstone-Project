@@ -49,7 +49,6 @@ class  RegisterActivity : AppCompatActivity() {
             }
 
             val builder: AlertDialog.Builder = AlertDialog.Builder(this@RegisterActivity)
-//              builder.setView(R.layout.activity_sign_up)
             val dialog: AlertDialog = builder.create()
 
             registerViewModel.responseResult.observe(this@RegisterActivity) { response ->
