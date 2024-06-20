@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selamat datang di Dentalize,"
-            android:textColor="@color/darker_green"
+            android:textColor="@color/light_green"
             android:textStyle="bold"
             android:textSize="18sp"/>
 
@@ -28,20 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ayo periksa kesehatan gigi anda!"
-            android:textColor="@color/darker_green"
+            android:textColor="@color/light_green"
             android:textStyle="bold"
             android:textSize="15sp"/>
     </LinearLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="60dp"
-        android:layout_toEndOf="@+id/tv_welcome"
-        tools:src="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/gifImageView"
@@ -62,7 +52,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="270dp"
         android:text="@string/history"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_green"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -83,6 +73,19 @@
             android:overScrollMode="never"
             android:scrollbarSize="0dp"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
 
@@ -133,6 +136,8 @@
             android:src="@drawable/baseline_person_24"
             tools:ignore="MissingConstraints" />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 
 </RelativeLayout>
