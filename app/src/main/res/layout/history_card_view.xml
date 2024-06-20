@@ -33,18 +33,18 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/date_item_history"
+                android:id="@+id/name_item_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/date"
+                android:text="@string/disease_name"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/symptoms_item_history"
+                android:id="@+id/description_item_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nama"
+                android:text="@string/description"
                 android:textSize="14sp"
                 android:textColor="@android:color/black" />
         </LinearLayout>
