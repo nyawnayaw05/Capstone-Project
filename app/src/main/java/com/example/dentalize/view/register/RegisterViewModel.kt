@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
 
-class RegisterViewModel(private val predictRepository: PredictRepository) : ViewModel() {
+class RegisterViewModel(private val repository: PredictRepository) : ViewModel() {
     private val _responseResult = MutableLiveData<ResultState<RegisterResponse>>()
     val responseResult : LiveData<ResultState<RegisterResponse>> = _responseResult
 

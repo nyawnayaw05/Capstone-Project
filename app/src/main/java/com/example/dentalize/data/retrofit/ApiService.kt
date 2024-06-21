@@ -5,7 +5,7 @@ import com.example.dentalize.data.response.LoginResponse
 import com.example.dentalize.data.response.PredictResponse
 import com.example.dentalize.data.response.RegisterResponse
 import com.example.dentalize.data.response.ResultResponse
-import com.google.mlkit.nl.entityextraction.Entity.Type
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.Field
@@ -33,8 +33,20 @@ interface ApiService {
 //        @Field("password") password: String
     ): LoginResponse
 
-    @GET("history}")
-    suspend fun getHistory(
+    @Multipart
+    @POST("upload")
+    suspend fun uploadPredict(
+        @Part image: MultipartBody.Part,
+        @Part("result") result: RequestBody,
+        @Part("createdDate") createdDate: RequestBody,
+        @Part("suggestion") suggestion: RequestBody,
+        @Part("cause") cause: RequestBody,
+        @Part("explanation") explanation: RequestBody,
+        @Part("prevention") prevention: RequestBody
+    ):PredictResponse
+
+    @GET("history")
+     fun getHistory(
         @Query("q") result: String
     ):Call<ItemHistoryResponse>
 

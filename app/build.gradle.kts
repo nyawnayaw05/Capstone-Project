@@ -25,7 +25,7 @@ android {
         val properties = Properties()
         properties.load(FileInputStream(rootProject.file("local.properties")))
 
-        val apiUrl = properties.getProperty("API_URL") ?: "https://backend-cloud-fcoiifrh6q-et.a.run.app/auth/"
+        val apiUrl = properties.getProperty("API_URL") ?: "https://backend-cloud-fcoiifrh6q-et.a.run.app"
 
         buildConfigField(
             type = "String",

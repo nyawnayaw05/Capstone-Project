@@ -25,6 +25,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.core.content.ContextCompat
 import com.example.dentalize.data.result.ResultState
 import com.example.dentalize.view.home.HomeActivity
+import okhttp3.RequestBody
 
 class AddActivity : AppCompatActivity() {
 
@@ -63,7 +64,7 @@ class AddActivity : AppCompatActivity() {
         }
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
-        binding.uploadButton.setOnClickListener { uploadStory() }
+        binding.uploadButton.setOnClickListener { uploadPredict() }
 
         val intentStory = Intent(this, HomeActivity::class.java)
         addviewModel.responseResult.observe(this) { result ->
@@ -115,7 +116,7 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
-    private fun uploadStory() {
+    private fun uploadPredict() {
         currentImageUri?.let { uri ->
             val imageFile = uriToFile(uri, this).reduceFileImage()
             Log.d("Image File", "showImage: ${imageFile.path}")
@@ -123,7 +124,7 @@ class AddActivity : AppCompatActivity() {
             val multipartBody = MultipartBody.Part.createFormData(
                 "photo",
                 imageFile.name,
-                requestImageFile
+                requestImageFile,
             )
         } ?: showToast(getString(R.string.empty_image_warning))
     }

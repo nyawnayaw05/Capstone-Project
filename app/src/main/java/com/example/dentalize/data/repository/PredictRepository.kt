@@ -38,7 +38,7 @@ class PredictRepository private constructor(
         causeBody: RequestBody,
         explanationBody: RequestBody,
         preventionBody: RequestBody
-    ) = apiService.uploadImage(multipartBody, resultBody, createdDateBody,
+    ) = apiService.uploadPredict(multipartBody, resultBody, createdDateBody,
         suggestionBody, causeBody, explanationBody, preventionBody)
 
     companion object {

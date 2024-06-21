@@ -1,9 +1,9 @@
-package com.example.dentalize.view
+package com.example.dentalize.view.result
 
+import android.content.Intent.EXTRA_USER
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.dentalize.R
 import com.example.dentalize.data.response.ResultResponse
@@ -14,22 +14,18 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
     private val viewModel: ResultViewModel by viewModels()
 
-    companion object{
-        const val EXTRA_USER = "key_user"
-        var result = String()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        result = intent.getStringExtra(EXTRA_USER).toString()
+        var result = intent.getStringExtra(EXTRA_USER).toString()
 
         supportActionBar?.hide()
 
         viewModel.resultDisease(result)
         viewModel.result.observe(this) {
-            result -> showDetailResult(result)
+                result -> showDetailResult(result)
         }
     }
 

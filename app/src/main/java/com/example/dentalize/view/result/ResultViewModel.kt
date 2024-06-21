@@ -17,13 +17,9 @@ class ResultViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    companion object{
-        private const val TAG = "HomeViewModel"
-    }
-
     fun resultDisease(result: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getResult(result)
+        val client = ApiConfig.getApiService(result).getResult(result)
         client.enqueue(object : Callback<ResultResponse>{
             override fun onResponse(
                 call: Call<ResultResponse>,
@@ -45,5 +41,9 @@ class ResultViewModel : ViewModel() {
                 Log.e(TAG, "onFailure: ${t.message}")
             }
         })
+    }
+
+    companion object{
+        private const val TAG = "HomeViewModel"
     }
 }

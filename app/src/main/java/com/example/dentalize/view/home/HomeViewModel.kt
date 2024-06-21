@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.dentalize.data.pref.UserRepository
+import com.example.dentalize.data.repository.PredictRepository
 import com.example.dentalize.data.response.ItemHistoryResponse
 import com.example.dentalize.data.response.ItemHistoryResponseItem
 import com.example.dentalize.data.retrofit.ApiConfig
@@ -13,20 +13,16 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class HomeViewModel(private val repository: UserRepository): ViewModel() {
+class HomeViewModel(private val repository: PredictRepository): ViewModel() {
     private val _history = MutableLiveData<List<ItemHistoryResponseItem>>()
     val history: MutableLiveData<List<ItemHistoryResponseItem>> = _history
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    companion object{
-        private const val  TAG = "HomeViewModel"
-    }
-
     private suspend fun findUser(result: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getHistory(result)
+        val client = ApiConfig.getApiService(result).getHistory(result)
         client.enqueue(object : Callback<ItemHistoryResponse> {
             override fun onResponse(
                 call: Call<ItemHistoryResponse>,
@@ -50,6 +46,7 @@ class HomeViewModel(private val repository: UserRepository): ViewModel() {
         })
 
     }
-
-
+    companion object{
+        private const val  TAG = "HomeViewModel"
+    }
 }

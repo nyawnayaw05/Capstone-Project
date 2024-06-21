@@ -30,4 +30,7 @@
     <string name="disease_name">Nama</string>
     <string name="text_dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis vestibulum consectetur. Nunc euismod, lectus eu vestibulum cursus, eros justo tempus metus, sed suscipit libero nibh vitae erat. Sed urna magna, aliquam id nisi nec, volutpat ullamcorper nisl. Vivamus porta justo nibh, nec vestibulum orci ullamcorper vitae.</string>
     <string name="description">Deskripsi</string>
+    <string name="maps">maps</string>
+    <string name="empty_image_warning">empty_image_warning</string>
+    <string name="camera_error">camera_error</string>
 </resources>
